@@ -1,5 +1,6 @@
 # Project specific
 data/
+MMHal-Bench/test_data.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
