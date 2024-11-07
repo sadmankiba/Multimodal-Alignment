@@ -73,12 +73,15 @@ To evaluate the LMM responses, first, begin your evaluation by providing a short
 {}
 '''
 
+max_questions = 96
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--response', type=str, default='responses/idefics_80b.json', help='response file containing images, questions, and model responses')
     parser.add_argument('--evaluation', type=str, default=None, help='GPT-4 evaluation results to be saved')
     parser.add_argument('--api-key', type=str, required=True)
     parser.add_argument('--gpt-model', type=str, default='gpt-4o')
+    parser.add_argument('--num-questions', type=int, default=max_questions, help='number of questions')
     args = parser.parse_args()
 
     openai.api_key = args.api_key
@@ -87,7 +90,7 @@ if __name__ == '__main__':
     with open(args.response, 'r') as f:
         records = json.load(f)
 
-    assert len(records) == 96
+    assert len(records) >= args.num_questions
 
     # ask GPT-4 to evaluate
     responses = []
@@ -114,7 +117,11 @@ if __name__ == '__main__':
 
         print(i, response['choices'][0]['message']['content'], flush=True)
         responses.append(response)
-        time.sleep(1)
+        
+        if i >= (args.num_questions - 1):
+            break
+        
+        time.sleep(0.2)
 
     # save responses
     if args.evaluation is not None:
@@ -144,8 +151,9 @@ if __name__ == '__main__':
             hallucination.append(1)
 
     scores_each = [[] for _ in range(8)]
-    # assuming order of 96 questions is not changed
-    for i in range(96):
+    
+    # assuming order of questions is not changed
+    for i in range(args.num_questions):
         question_type = i % 8
         scores_each[question_type].append(scores[i])
 

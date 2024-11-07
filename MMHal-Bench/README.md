@@ -20,14 +20,15 @@ You may check `response_template.json` for more details. In the folder `response
 
 To evaluate your own model on MMHal-Bench, first generate model responses to the image-question pairs. You may check the template `get_response.py` about how to read and write to the response file.
 
-After that, you may let GPT-4 rate your model's responses automatically. You will need package `openai` installed and an API key. Then, run `eval_gpt4.py`:
+After that, you may let GPT-4 rate your model's responses automatically. You will need package `openai=0.28` installed and an API key. Then, run `eval_gpt4.py`:
 
 ```
 python eval_gpt4.py \
     --response [JSON file with model responses] \
     --evaluation [JSON file with GPT-4 evaluation to be saved] \
     --api-key [your OpenAI API key, starting with 'sk-'] \
-    --gpt-model [GPT model to be used, or 'gpt-4-0314' by default]
+    --gpt-model [GPT model to be used, or 'gpt-4o' by default] \
+    --num-questions [Number of questions, default 96]
 ```
 
 Please note that the GPT-4 API calls are not free. Depending on your model response lengths, evaluating each question may use 1.5k-2k tokens. Also, GPT-4 responses are not deterministic, so you may get different results with the same responses.
