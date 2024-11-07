@@ -5,6 +5,8 @@ import requests
 from PIL import Image
 from io import BytesIO
 
+from llava_onevision import build_llava_onevision
+
 def load_image(image_file):
     if image_file.startswith('http') or image_file.startswith('https'):
         response = requests.get(image_file)
@@ -21,16 +23,16 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # build the model using your own code
-    mymodel = build_mymodel(args)
+    mymodel = build_llava_onevision()
 
-    json_data = json.load(open(args.input_json, 'r'))
+    json_data = json.load(open(args.input, 'r'))
 
     for idx, line in enumerate(json_data):
         image_src = line['image_src']
         image = load_image(image_src)
         question = line['question']
         response = mymodel(image, question)
-        # print(idx, response)
+        print(idx, image_src, response)
         line['model_answer'] = response
 
     with open(args.output, 'w') as f:

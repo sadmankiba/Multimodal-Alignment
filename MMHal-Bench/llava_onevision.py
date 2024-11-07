@@ -30,27 +30,27 @@ class LlavaOnevision:
         ]
         prompt = self.processor.apply_chat_template(conversation, add_generation_prompt=True)
 
-        # image_file = "http://images.cocodataset.org/train2017/000000039768.jpg"
-        # raw_image = Image.open(requests.get(image_file, stream=True).raw)
         inputs = self.processor(images=image, text=prompt, return_tensors='pt').to(0, torch.float16)
 
         output = self.model.generate(**inputs, max_new_tokens=200, do_sample=False)
-        return self.processor.decode(output[0][2:], skip_special_tokens=True)
+        text_output = self.processor.decode(output[0][2:], skip_special_tokens=True)
+        return text_output[text_output.find("assistant")+len("assistant")+1:]
+        
     
-def build_llaonevision():
+def build_llava_onevision():
     return LlavaOnevision()
 
 def test_llava_onevision():
-    model = build_llaonevision()
-    image_file = "images/47604332_c306b496b5_o.jpg"
-    image = Image.open(image_file).convert('RGB')
+    model = build_llava_onevision()
+    
+    # from web
+    # image_file = "http://images.cocodataset.org/train2017/000000039768.jpg"
+    # image = Image.open(requests.get(image_file, stream=True).raw)
+          
+    image_file = "images/2519330533_597840098a_o.jpg"
+    image = Image.open(image_file).convert('RGB')  # PIL already opens in RGB mode
     response = model(image, "What are inside this?")
     print(response)
 
 if __name__ == '__main__':
     test_llava_onevision()
-    
-# Image loading issue
-# 
-# Error: PIL.UnidentifiedImageError: cannot identify image file 
-# '/users/Sadman/Foundation-Model-Project/MMHal-Bench/images/47604332_c306b496b5_o.jpg'
