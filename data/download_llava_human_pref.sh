@@ -1,0 +1,1 @@
+wget https://huggingface.co/datasets/zhiqings/LLaVA-Human-Preference-10K/resolve/main/llava_7b_v1_preference.json?download=true -O llava_7b_v1_preference.json

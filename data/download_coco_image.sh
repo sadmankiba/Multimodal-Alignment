@@ -1,0 +1,1 @@
+wget http://images.cocodataset.org/train2017/000000013249.jpg -O images/000000013249.jpg

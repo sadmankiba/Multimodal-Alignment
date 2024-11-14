@@ -1,5 +1,7 @@
 # Project specific
-data/
+data/images
+data/*.json
+
 MMHal-Bench/test_data.zip
 
 # Byte-compiled / optimized / DLL files
