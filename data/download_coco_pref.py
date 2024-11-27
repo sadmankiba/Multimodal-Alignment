@@ -29,7 +29,7 @@ for entry in data:
     if response.status_code == 200:
         with open(image_path, 'wb') as img_file:
             img_file.write(response.content)
-        print(f"Downloaded {image_name}")
+        print(f"{i}: Downloaded {image_name}")
     else:
         print(f"Failed to download {image_name}")
         
