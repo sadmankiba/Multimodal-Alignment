@@ -121,7 +121,7 @@ if __name__ == '__main__':
         if i >= (args.num_questions - 1):
             break
         
-        time.sleep(0.2)
+        time.sleep(2)
 
     # save responses
     if args.evaluation is not None:

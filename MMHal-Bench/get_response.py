@@ -5,6 +5,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 
+from blip2 import build_blip2
 from llava_onevision import build_llava_onevision
 
 def load_image(image_file):
@@ -19,11 +20,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=str, default='response_template.json', help='template file containing images and questions')
     parser.add_argument('--output', type=str, default='response_mymodel.json', help='output file containing model responses')
-    parser.add_argument('--mymodel', type=str)
+    parser.add_argument('--model', type=str, default='blip2', help='model. blip2 | onevision')
     args = parser.parse_args()
 
     # build the model using your own code
-    mymodel = build_llava_onevision()
+    if args.model == 'onevision':
+        mymodel = build_llava_onevision()
+    elif args.model == 'blip2':
+        mymodel = build_blip2()
 
     json_data = json.load(open(args.input, 'r'))
 
