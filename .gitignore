@@ -1,7 +1,7 @@
 # Project specific
 data/images
 data/*.json
-
+FM_Reward/images/
 MMHal-Bench/test_data.zip
 
 # Byte-compiled / optimized / DLL files
