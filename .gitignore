@@ -3,6 +3,7 @@ data/images
 data/*.json
 FM_Reward/images/
 MMHal-Bench/test_data.zip
+FM_Reward/processed_llava_dataset/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
