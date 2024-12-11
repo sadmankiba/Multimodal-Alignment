@@ -1,0 +1,78 @@
+TypeError: Blip2ForConditionalGeneration.forward() missing 1 required positional argument: 'pixel_values'
+
+In DPO trainer, after process row 
+
+train_dataset Dataset({
+    features: ['images', 'prompt', 'chosen', 'rejected', 'input_ids', 'attention_mask', 'pixel_values', 'prompt_pixel_values', 'prompt_input_ids', 'chosen_input_ids', 'rejected_input_ids'],
+    num_rows: 1
+})
+train_dataset [50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 2, 6179, 171, 10017, 32, 89, 116]
+
+In trainer.py 
+
+train_dataloader 0 {'prompt_input_ids': tensor([[50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116]],
+       device='cuda:0'), 'prompt_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], device='cuda:0'), 'chosen_input_ids': tensor([[7109,    2]], device='cuda:0'), 'chosen_attention_mask': tensor([[1, 1]], device='cuda:0'), 'rejected_input_ids': tensor([[9983,    2]], device='cuda:0'), 'rejected_attention_mask': tensor([[1, 1]], device='cuda:0')}
+batch_samples [{'prompt_input_ids': tensor([[50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116]],
+       device='cuda:0'), 'prompt_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], device='cuda:0'), 'chosen_input_ids': tensor([[7109,    2]], device='cuda:0'), 'chosen_attention_mask': tensor([[1, 1]], device='cuda:0'), 'rejected_input_ids': tensor([[9983,    2]], device='cuda:0'), 'rejected_attention_mask': tensor([[1, 1]], device='cuda:0')}]
+
+vim ~/venv/lib/python3.10/site-packages/transformers/trainer.py : 2481
+
+inputs {'prompt_input_ids': tensor([[50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116]],
+       device='cuda:0'), 'prompt_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], device='cuda:0'), 'chosen_input_ids': tensor([[7109,    2]], device='cuda:0'), 'chosen_attention_mask': tensor([[1, 1]], device='cuda:0'), 'rejected_input_ids': tensor([[9983,    2]], device='cuda:0'), 'rejected_attention_mask': tensor([[1, 1]], device='cuda:0')}
+
+
+
+
+batch should contain pixel_values.
+
+In dpo_trainer.py, 
+
+batch {'prompt_input_ids': tensor([[50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116]],
+       device='cuda:0'), 'prompt_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], device='cuda:0'), 'chosen_input_ids': tensor([[7109,    2]], device='cuda:0'), 'chosen_attention_mask': tensor([[1, 1]], device='cuda:0'), 'rejected_input_ids': tensor([[9983,    2]], device='cuda:0'), 'rejected_attention_mask': tensor([[1, 1]], device='cuda:0')}
+concatenated_batch {'prompt_input_ids': tensor([[50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116],
+        [50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116]],
+       device='cuda:0'), 'prompt_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], device='cuda:0'), 'completion_input_ids': tensor([[7109,    2],
+        [9983,    2]], device='cuda:0'), 'completion_attention_mask': tensor([[1, 1],
+        [1, 1]], device='cuda:0')}
+
+model_kwargs should contain pixel_values. 
+
+vim ~/venv/lib/python3.10/site-packages/trl/trainer/dpo_trainer.py:1260
+
+input_ids tensor([[50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116,  7109,     2],
+        [50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265, 50265,
+         50265, 50265,  6179,   171, 10017,    32,    89,   116,  9983,     2]],
+       device='cuda:0') attention_mask tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], device='cuda:0') model_kwargs {}
