@@ -6,7 +6,11 @@ import torch
 import pandas as pd
 from datasets import Dataset
 from PIL import Image
-from transformers import Blip2ForConditionalGeneration, AutoProcessor
+from transformers import (
+    Blip2ForConditionalGeneration, 
+    AutoProcessor, 
+    BitsAndBytesConfig
+)
 from trl import DPOConfig, DPOTrainer
 from peft import LoraConfig
 
@@ -55,6 +59,7 @@ def get_blip2_pref_dataset(num_items=100):
 
 def load_blip2_model(args):
     model_id = "Salesforce/blip2-opt-2.7b"
+    
     processor = AutoProcessor.from_pretrained(model_id)
     model = Blip2ForConditionalGeneration.from_pretrained(model_id, 
                 torch_dtype=torch.float16).to(args.device)
@@ -64,11 +69,14 @@ def load_blip2_model(args):
 def train_model_dpo(model, processor, train_dataset, eval_dataset, args):
     training_args = DPOConfig(
         output_dir=args.output_dir,
-        bf16=args.bf16,
-        gradient_checkpointing=args.gradient_chekpointing,
+        fp16=True,
+        # bf16=args.bf16, # only useful on Ampere or newer GPUs
+        gradient_checkpointing=True,
         max_steps=1, # testing purpose
         per_device_train_batch_size=args.batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
+        torch_compile=True,
+        optim="adamw_bnb_8bit",
         num_train_epochs=args.num_epochs,
         logging_steps=args.logging_steps,
         logging_dir=args.logging_dir,
@@ -85,7 +93,7 @@ def train_model_dpo(model, processor, train_dataset, eval_dataset, args):
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         processing_class=processor,
-        peft_config=LoraConfig(),
+        peft_config=LoraConfig(target_modules="all-linear"),
     )
 
     trainer.train()
@@ -93,16 +101,14 @@ def train_model_dpo(model, processor, train_dataset, eval_dataset, args):
 if __name__ == "__main__": 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     Args = namedtuple('Args', ['batch_size', 'num_epochs', 'logging_steps', 
-                'gradient_accumulation_steps', 'gradient_chekpointing', 
-                'bf16', 'output_dir', 'logging_dir', 'device'])
+                'gradient_accumulation_steps',
+                'output_dir', 'logging_dir', 'device'])
     
     args = Args(
         batch_size=1,
         num_epochs=3,
         logging_steps=1,
-        gradient_accumulation_steps=4,
-        gradient_chekpointing=True,
-        bf16=True,
+        gradient_accumulation_steps=1,
         output_dir="blip2-dpo",
         logging_dir="../logs",
         device=device
