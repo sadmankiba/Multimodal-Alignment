@@ -21,14 +21,13 @@ def get_coco_image(dataset_name, image_name):
     local_image_path = os.path.join(dir, image_name)
     if os.path.exists(local_image_path):
         image = Image.open(local_image_path)
-        print("image", image)
         return image
     
     # Download image
     coco_url = f"http://images.cocodataset.org/{dataset_name}/{image_name}"
     response = requests.get(coco_url)
+    
     image = Image.open(BytesIO(response.content))
-    print("image", image)
     
     # Save image
     image.save(local_image_path)

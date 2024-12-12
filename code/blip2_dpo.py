@@ -5,6 +5,7 @@ from utils import get_coco_image
 import torch
 import pandas as pd
 from datasets import Dataset
+from PIL import Image
 from transformers import Blip2ForConditionalGeneration, AutoProcessor
 from trl import DPOConfig, DPOTrainer
 from peft import LoraConfig
@@ -36,27 +37,20 @@ def get_blip2_pref_dataset(num_items=100):
         image_file = row['image_url'].split('/')[-1]
         image = get_coco_image(coco_dataset_name, image_file)
         data_list.append({
-            'image': image,
+            'images': image,
             'prompt': row['question'],
-            'chosen': chosen,
-            'rejected': rejected
+            'chosen': str(chosen),
+            'rejected': str(rejected)
         })
         
         if idx == num_items:
             break
-
-    print(data_list[0]['prompt'], data_list[0]['chosen'], data_list[0]['rejected'], len(data_list[0]['image']))
 
     def gen_data():
         for data in data_list:
             yield data
             
     dataset = Dataset.from_generator(gen_data)
-    print("dataset 0 chosen", dataset[0]['chosen'])
-    print("dataset 0 rejected", dataset[0]['rejected'])
-    print("dataset 0 prompt", dataset[0]['prompt'])
-    print("dataset 0 image len", len(dataset[0]['image']))
-    
     return dataset
 
 def load_blip2_model(args):
@@ -103,7 +97,7 @@ if __name__ == "__main__":
                 'bf16', 'output_dir', 'logging_dir', 'device'])
     
     args = Args(
-        batch_size=2,
+        batch_size=1,
         num_epochs=3,
         logging_steps=1,
         gradient_accumulation_steps=4,
@@ -113,19 +107,15 @@ if __name__ == "__main__":
         logging_dir="../logs",
         device=device
     )
-
     print(args)
     
     dataset = get_blip2_pref_dataset()
-    print(len(dataset))
-    print(dataset)
-    
     train_test_split = dataset.train_test_split(test_size=0.1)
     train_dataset = train_test_split['train']
     eval_dataset = train_test_split['test']
-    print(len(train_dataset))
-    print(len(eval_dataset))
-    exit()
+    print("Prepared dataset")
     
     model, processor = load_blip2_model(args)
+    
+    print("Starting training")
     train_model_dpo(model, processor, train_dataset, eval_dataset, args)
