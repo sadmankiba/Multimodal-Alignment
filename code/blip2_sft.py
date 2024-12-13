@@ -70,28 +70,48 @@ def load_blip2_model(args):
 
 def _collate_fn(examples, processor):
     # Get the texts and images, and apply the template
+    print("Examples", examples)
     texts = [] 
+    mask_texts = []
     for example in examples:
-        texts.append(f"Question: {example['question']} Answer:")
+        texts.append(f"Question: {example['question']} Answer: {example['answer']}")
+        mask_texts.append(f"Question: {example['question']} Answer:")
 
     images = [example["images"][0] for example in examples]
+    print("Images", images)
 
     # Tokenize the texts and process the images
-    batch = processor(texts, images, return_tensors="pt", padding=True)
-    target = processor(text=response, padding="max_length", truncation=True, max_length=256, return_tensors="pt")
-    {example['answer']}
-    # The labels are the input_ids, and we mask the padding tokens in the loss computation
-    labels = batch["input_ids"].clone()
+    input_encoding = processor(images=images, text=texts, return_tensors="pt", padding=True)
+    mask_encoding = processor(images=images, text=mask_texts, return_tensors="pt", padding=True)
+    print("input_encoding keys", input_encoding.keys())
+    print("input_encoding input_ids", input_encoding["input_ids"])
+    print("mask_encoding input_ids", mask_encoding["input_ids"])
+    
+    # The labels are the input_ids, and we mask the query and question tokens in the loss computation
+    labels = input_encoding["input_ids"].clone()
+    labels[input_encoding["input_ids"] == mask_encoding["input_ids"]] = -100
     labels[labels == processor.tokenizer.pad_token_id] = -100
-    batch["labels"] = labels
-
-    return batch
+    print("labels", labels)
+    input_encoding["labels"] = labels
+    exit()
+    return input_encoding
 
 
 def run_sft(model, processor, train_dataset, eval_dataset, args):
     training_args = SFTConfig(
         max_seq_length=args.max_seq_length,
-        output_dir="/tmp",
+        output_dir=args.output_dir,
+        fp16=True,
+        gradient_checkpointing=True,
+        per_device_train_batch_size=args.batch_size,
+        gradient_accumulation_steps=args.gradient_accumulation_steps,
+        torch_compile=True,
+        num_train_epochs=args.num_epochs,
+        logging_steps=args.logging_steps,
+        logging_dir=args.logging_dir,
+        logging_strategy="steps",
+        push_to_hub=True,
+        hub_private_repo=True,
         max_steps=args.max_steps,
         save_strategy="no",
         remove_unused_columns=False,
@@ -101,7 +121,7 @@ def run_sft(model, processor, train_dataset, eval_dataset, args):
     trainer = SFTTrainer(
         model=model,
         args=training_args,
-        data_collator=_collate_fn,
+        data_collator=partial(_collate_fn, processor=processor),
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         processing_class=processor.tokenizer,
@@ -109,20 +129,27 @@ def run_sft(model, processor, train_dataset, eval_dataset, args):
     
     trainer.train()
 
-# Define preprocessing function
-def preprocess_function(example):
-    
-    return inputs
-
 if __name__ == "__main__":
-    Args = namedtuple('Args', ['device', 'max_seq_length', 'max_steps'])
-    args = Args(device='cuda', max_seq_length=512, max_steps=1000)
+    Args = namedtuple('Args', ['device', 'max_seq_length', 'max_steps', 
+            'batch_size', 'num_epochs', 'logging_steps', 
+            'gradient_accumulation_steps', 'output_dir', 'logging_dir'])
+    args = Args(device='cuda', max_seq_length=512, max_steps=1, 
+        batch_size=1, num_epochs=3, logging_steps=1, 
+        gradient_accumulation_steps=1, output_dir="blip2-sft", logging_dir="../logs")
     
-    dataset = get_llava_instruct_dataset()
-    model, processor = load_blip2_model()
+    dataset = get_llava_instruct_dataset(num_items=40)
+    dataset = dataset.map()
+    train_test_split = dataset.train_test_split(test_size=0.1)
+    train_dataset = train_test_split['train']
+    eval_dataset = train_test_split['test']
     
-    train_dataset = dataset["train"]
-    eval_dataset = dataset["validation"]
+    print("Dataset length", len(dataset))
+    print("Dataset[0]", dataset[0])
+    print("Train dataset length", len(train_dataset))
+    print("Eval dataset length", len(eval_dataset))
+    
+    model, processor = load_blip2_model(args)
+    
     
     run_sft(model, processor, train_dataset, eval_dataset, args)
 
