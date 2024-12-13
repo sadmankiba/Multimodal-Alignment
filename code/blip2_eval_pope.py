@@ -29,7 +29,7 @@ model = Blip2ForConditionalGeneration.from_pretrained(
 model = model.to(device)
 
 responses = []
-for i, entry in enumerate(tqdm(dataset)): 
+for i, entry in enumerate(tqdm(dataset['test'])): 
     prompt = f"Question: {entry['question']} Answer:"
     image = entry['image']
     inputs = processor(images=image, text=prompt, return_tensors="pt").to(device, torch.float16)
@@ -54,9 +54,6 @@ for i, entry in enumerate(tqdm(dataset)):
     })
     
     # Save every 1000 responses
-    if (i + 1) % 5 == 0:
+    if (i + 1) % 1000 == 0:
         print("Saving responses...")
-        pd.DataFrame(responses).to_csv(f"../data/pope_blip2_responses_{i}.csv", index=False)
-        
-    if i == 10: 
-        break
+        pd.DataFrame(responses).to_csv(f"../data/pope_blip2_responses_{i+1}.csv", index=False)
