@@ -46,11 +46,13 @@ def get_llava_instruct_dataset(num_items=100):
                 'question': question,
                 'answer': answer
             })
-            if len(data_list) == num_items:
+            if len(data_list) >= num_items:
                 break
         
         print("Processed", idx)
-        
+        if len(data_list) >= num_items:
+            break
+            
     def gen_data():
         for data in data_list:
             yield data
