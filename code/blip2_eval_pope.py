@@ -37,8 +37,9 @@ def run_eval():
         prompt = f"Question: {entry['question']} Answer:"
         image = entry['image']
         inputs = processor(images=image, text=prompt, return_tensors="pt").to(device, torch.float16)
-        model, name = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base"
+        # model, name = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base"
         # model, name = get_blip2_model("blip2-sft"), "blip2-sft"
+        model, name = get_blip2_model("sadmankiba/blip2-sft"), "blip2-sft"
         
         output = model.generate(**inputs, max_new_tokens=20)
         
@@ -103,5 +104,5 @@ def print_metrics():
         print()
 
 if __name__ == "__main__":
-    # run_eval()
-    print_metrics()
+    run_eval()
+    # print_metrics()
