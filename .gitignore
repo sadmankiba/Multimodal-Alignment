@@ -7,6 +7,7 @@ FM_Reward/processed_llava_dataset/
 code/sadmankiba/
 logs/
 code/blip2-sft/
+code/blip2-sft-10/
 code/sft_blip2_llava_instruct/
 
 # Byte-compiled / optimized / DLL files

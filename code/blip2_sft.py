@@ -50,7 +50,7 @@ def get_llava_instruct_dataset(num_items=100):
             if len(data_list) >= num_items:
                 break
         
-        # print("Processed", idx)
+        print("Processed", idx)
         if len(data_list) >= num_items:
             break
             
@@ -128,7 +128,7 @@ def run_sft(model, processor, train_dataset, eval_dataset, args):
         logging_strategy="steps",
         optim="adamw_bnb_8bit",
         push_to_hub=True,
-        hub_private_repo=True,
+        hub_private_repo=False,
         max_steps=args.max_steps,
         save_strategy="steps",
         remove_unused_columns=False,
@@ -151,11 +151,11 @@ if __name__ == "__main__":
     Args = namedtuple('Args', ['device', 'max_seq_length', 'max_steps', 
             'batch_size', 'num_epochs', 'logging_steps', 
             'gradient_accumulation_steps', 'output_dir', 'logging_dir'])
-    args = Args(device='cpu', max_seq_length=512, max_steps=10, 
-        batch_size=2, num_epochs=3, logging_steps=1, 
+    args = Args(device='cpu', max_seq_length=512, max_steps=-1, 
+        batch_size=2, num_epochs=1, logging_steps=10, 
         gradient_accumulation_steps=1, output_dir="blip2-sft", logging_dir="../logs")
     
-    dataset = get_llava_instruct_dataset(num_items=40)
+    dataset = get_llava_instruct_dataset(num_items=5000)
     dataset = dataset.map()
     train_test_split = dataset.train_test_split(test_size=0.1)
     train_dataset = train_test_split['train']

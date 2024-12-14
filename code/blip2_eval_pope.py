@@ -35,8 +35,8 @@ for i, entry in enumerate(tqdm(dataset['test'])):
     prompt = f"Question: {entry['question']} Answer:"
     image = entry['image']
     inputs = processor(images=image, text=prompt, return_tensors="pt").to(device, torch.float16)
-    # model, name = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base"
-    model, name = get_blip2_model("blip2-sft"), "blip2-sft"
+    model, name = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base"
+    # model, name = get_blip2_model("blip2-sft"), "blip2-sft"
     
     output = model.generate(**inputs, max_new_tokens=20)
     
@@ -59,9 +59,6 @@ for i, entry in enumerate(tqdm(dataset['test'])):
     })
     
     # Save every 1000 responses
-    if (i + 1) % 10 == 0:
+    if (i + 1) % 1000 == 0:
         print("Saving responses...")
         pd.DataFrame(responses).to_csv(f"../data/pope_{name}_responses_{i+1}.csv", index=False)
-        
-    if i == 10:
-        break
