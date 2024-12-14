@@ -12,6 +12,7 @@ from datasets import Dataset, load_dataset
 from transformers import Blip2Processor, Blip2ForConditionalGeneration
 from trl import SFTConfig, SFTTrainer
 from collections import namedtuple
+from peft import LoraConfig
 
 from utils import get_coco_image
 
@@ -29,8 +30,8 @@ def get_llava_instruct_dataset(num_items=100):
     with open(llava_instruct_filepath, 'r') as file:
         llava_instruct_data = json.load(file)
     
-    print("Dataset len", len(llava_instruct_data))
-    print(llava_instruct_data[0])
+    # print("Dataset len", len(llava_instruct_data))
+    # print(llava_instruct_data[0])
     
     data_list = []
     for idx, row in enumerate(llava_instruct_data):
@@ -49,7 +50,7 @@ def get_llava_instruct_dataset(num_items=100):
             if len(data_list) >= num_items:
                 break
         
-        print("Processed", idx)
+        # print("Processed", idx)
         if len(data_list) >= num_items:
             break
             
@@ -72,31 +73,44 @@ def load_blip2_model(args):
 
 def _collate_fn(examples, processor):
     # Get the texts and images, and apply the template
-    print("Examples", examples)
     texts = [] 
     mask_texts = []
     for example in examples:
         texts.append(f"Question: {example['question']} Answer: {example['answer']}")
         mask_texts.append(f"Question: {example['question']} Answer:")
 
-    images = [example["images"][0] for example in examples]
-    print("Images", images)
+    images = [example["images"] for example in examples]
 
     # Tokenize the texts and process the images
     input_encoding = processor(images=images, text=texts, return_tensors="pt", padding=True)
     mask_encoding = processor(images=images, text=mask_texts, return_tensors="pt", padding=True)
-    print("input_encoding keys", input_encoding.keys())
-    print("input_encoding input_ids", input_encoding["input_ids"])
-    print("mask_encoding input_ids", mask_encoding["input_ids"])
     
-    # The labels are the input_ids, and we mask the query and question tokens in the loss computation
+    # Pad mask_encoding to match input_encoding size
+    if mask_encoding["input_ids"].size(1) < input_encoding["input_ids"].size(1):
+        padding_size = input_encoding["input_ids"].size(1) - mask_encoding["input_ids"].size(1)
+        mask_encoding["input_ids"] = torch.nn.functional.pad(mask_encoding["input_ids"], (0, padding_size), value=processor.tokenizer.pad_token_id)
+        mask_encoding["attention_mask"] = torch.nn.functional.pad(mask_encoding["attention_mask"], (0, padding_size), value=0)
+    
+    
+    # Use mask_encoding to set attention mask
+    input_encoding["attention_mask"] = mask_encoding["attention_mask"]
+    
+    # Set the labels as input_ids, but we mask the query and question tokens in the loss computation
     labels = input_encoding["input_ids"].clone()
     labels[input_encoding["input_ids"] == mask_encoding["input_ids"]] = -100
     labels[labels == processor.tokenizer.pad_token_id] = -100
-    print("labels", labels)
     input_encoding["labels"] = labels
-    exit()
+    
     return input_encoding
+
+# Example labels
+# labels tensor([[ -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
+#           -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
+#           -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
+#           -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
+#           -100,  -100,  -100,  -100,  -100,  -100,  -100,    20,  5252,  7097,
+#            198,     5, 16847, 10726,     9,    10, 10996,     8,    10,   739,
+#            809,     9,   514,    50,  8037,  2034,   220,     7,    24,     4]])
 
 
 def run_sft(model, processor, train_dataset, eval_dataset, args):
@@ -107,15 +121,15 @@ def run_sft(model, processor, train_dataset, eval_dataset, args):
         gradient_checkpointing=True,
         per_device_train_batch_size=args.batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
-        torch_compile=True,
         num_train_epochs=args.num_epochs,
         logging_steps=args.logging_steps,
         logging_dir=args.logging_dir,
         logging_strategy="steps",
+        optim="adamw_bnb_8bit",
         push_to_hub=True,
         hub_private_repo=True,
         max_steps=args.max_steps,
-        save_strategy="no",
+        save_strategy="steps",
         remove_unused_columns=False,
         dataset_kwargs={"skip_prepare_dataset": True},
     )
@@ -127,6 +141,7 @@ def run_sft(model, processor, train_dataset, eval_dataset, args):
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         processing_class=processor.tokenizer,
+        peft_config=LoraConfig(target_modules="all-linear"),
     )
     
     trainer.train()
@@ -135,8 +150,8 @@ if __name__ == "__main__":
     Args = namedtuple('Args', ['device', 'max_seq_length', 'max_steps', 
             'batch_size', 'num_epochs', 'logging_steps', 
             'gradient_accumulation_steps', 'output_dir', 'logging_dir'])
-    args = Args(device='cuda', max_seq_length=512, max_steps=1, 
-        batch_size=1, num_epochs=3, logging_steps=1, 
+    args = Args(device='cpu', max_seq_length=512, max_steps=10, 
+        batch_size=2, num_epochs=3, logging_steps=1, 
         gradient_accumulation_steps=1, output_dir="blip2-sft", logging_dir="../logs")
     
     dataset = get_llava_instruct_dataset(num_items=40)
@@ -145,14 +160,15 @@ if __name__ == "__main__":
     train_dataset = train_test_split['train']
     eval_dataset = train_test_split['test']
     
-    print("Dataset length", len(dataset))
-    print("Dataset[0]", dataset[0])
-    print("Train dataset length", len(train_dataset))
-    print("Eval dataset length", len(eval_dataset))
+    # print("Dataset length", len(dataset))
+    # print("Dataset[0]", dataset[0])
+    # print("Train dataset length", len(train_dataset))
+    # print("Eval dataset length", len(eval_dataset))
     
     model, processor = load_blip2_model(args)
+    # Processor pad token id: 1
+    # Processor eos token id: 2
     
-    
+    if torch.cuda.is_available():
+        os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
     run_sft(model, processor, train_dataset, eval_dataset, args)
-
-    model.save_pretrained("sft_blip2_llava_instruct")

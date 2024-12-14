@@ -5,6 +5,9 @@ FM_Reward/images/
 MMHal-Bench/test_data.zip
 FM_Reward/processed_llava_dataset/
 code/sadmankiba/
+logs/
+code/blip2-sft/
+code/sft_blip2_llava_instruct/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
