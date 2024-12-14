@@ -3,6 +3,7 @@ import pandas as pd
 from datasets import load_dataset
 from tqdm import tqdm
 from transformers import Blip2Processor, Blip2ForConditionalGeneration
+from peft import PeftModel, PeftConfig
 
 # Procedure
 # 1. Load POPE dataset from HF and truncate. Load images.
@@ -24,11 +25,18 @@ print(dataset)
 device = "cuda" if torch.cuda.is_available() else "cpu"
 processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 
-def get_blip2_model(path: str):
+def get_blip2_model(path: str, lora: bool = False):
+    if lora: 
+        config = PeftConfig.from_pretrained(path)
+        model = Blip2ForConditionalGeneration.from_pretrained(config.base_model_name_or_path)
+        lora_model = PeftModel.from_pretrained(model, path).to(device)
+        return lora_model
+            
     model = Blip2ForConditionalGeneration.from_pretrained(
             path, torch_dtype=torch.float16
         )
     model = model.to(device)
+    
     return model
 
 def run_eval():
@@ -37,9 +45,9 @@ def run_eval():
         prompt = f"Question: {entry['question']} Answer:"
         image = entry['image']
         inputs = processor(images=image, text=prompt, return_tensors="pt").to(device, torch.float16)
-        # model, name = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base"
-        # model, name = get_blip2_model("blip2-sft"), "blip2-sft"
-        model, name = get_blip2_model("sadmankiba/blip2-sft"), "blip2-sft"
+        # model, name, lora = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base", False
+        # model, name, lora = get_blip2_model("blip2-sft"), "blip2-sft", False
+        model, name, lora = get_blip2_model("sadmankiba/blip2-sft"), "blip2-sft", True
         
         output = model.generate(**inputs, max_new_tokens=20)
         
