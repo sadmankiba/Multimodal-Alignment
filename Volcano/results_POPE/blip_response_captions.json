@@ -1,0 +1,502 @@
+[
+	{
+		"question": "Is there a snowboard in the image?\nYou are also provided image captions below to help you answer the question\n snowboarder on a slope",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a backpack in the image?\nYou are also provided image captions below to help you answer the question\n snowboarder on a slope",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n snowboarder on a slope",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n snowboarder on a slope",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a skis in the image?\nYou are also provided image captions below to help you answer the question\n snowboarder on a slope",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dog in the image?\nYou are also provided image captions below to help you answer the question\n snowboarder on a slope",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\n the girl is holding the umbrella for her mother",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n the girl is holding the umbrella for her mother",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n the girl is holding the umbrella for her mother",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n the girl is holding the umbrella for her mother",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there an umbrella in the imange?\nYou are also provided image captions below to help you answer the question\n the girl is holding the umbrella for her mother",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\n the girl is holding the umbrella for her mother",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n the bus stop at the corner of the street",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n the bus stop at the corner of the street",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a bicycle in the image?\nYou are also provided image captions below to help you answer the question\n the bus stop at the corner of the street",
+		"gt_answer": "yes",
+		"model_answer": " no"
+	},
+	{
+		"question": "Is there a motorcycle in the image?\nYou are also provided image captions below to help you answer the question\n the bus stop at the corner of the street",
+		"gt_answer": "no",
+		"model_answer": " no"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n the bus stop at the corner of the street",
+		"gt_answer": "yes",
+		"model_answer": " no"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\n the bus stop at the corner of the street",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a double decker bus",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n a double decker bus",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a potted plant in the image?\nYou are also provided image captions below to help you answer the question\n a double decker bus",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a vase in the image?\nYou are also provided image captions below to help you answer the question\n a double decker bus",
+		"gt_answer": "no",
+		"model_answer": " a double decker bus"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a double decker bus",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\n a double decker bus",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a traffic light in the image?\nYou are also provided image captions below to help you answer the question\n the car is a taxi, the flowers are flowers, the car is a taxi, the flowers are",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a bus in the image?\nYou are also provided image captions below to help you answer the question\n the car is a taxi, the flowers are flowers, the car is a taxi, the flowers are",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n the car is a taxi, the flowers are flowers, the car is a taxi, the flowers are",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n the car is a taxi, the flowers are flowers, the car is a taxi, the flowers are",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n the car is a taxi, the flowers are flowers, the car is a taxi, the flowers are",
+		"gt_answer": "yes",
+		"model_answer": " the car is a taxi"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\n the car is a taxi, the flowers are flowers, the car is a taxi, the flowers are",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dog in the image?\nYou are also provided image captions below to help you answer the question\n a bichon frise puppy",
+		"gt_answer": "yes",
+		"model_answer": " a bichon frise puppy"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a bichon frise puppy",
+		"gt_answer": "no",
+		"model_answer": " a bichon frise puppy"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n a bichon frise puppy",
+		"gt_answer": "yes",
+		"model_answer": " a bichon frise puppy"
+	},
+	{
+		"question": "Is there a chair in the image?\nYou are also provided image captions below to help you answer the question\n a bichon frise puppy",
+		"gt_answer": "no",
+		"model_answer": " a"
+	},
+	{
+		"question": "Is there a bed in the image?\nYou are also provided image captions below to help you answer the question\n a bichon frise puppy",
+		"gt_answer": "yes",
+		"model_answer": " a"
+	},
+	{
+		"question": "Is there a book in the image?\nYou are also provided image captions below to help you answer the question\n a bichon frise puppy",
+		"gt_answer": "no",
+		"model_answer": " a bichon frise puppy"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a man eating a donut in an office",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a man eating a donut in an office",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a spoon in the image?\nYou are also provided image captions below to help you answer the question\n a man eating a donut in an office",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\n a man eating a donut in an office",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a fork in the image?\nYou are also provided image captions below to help you answer the question\n a man eating a donut in an office",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n a man eating a donut in an office",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a tv in the image?\nYou are also provided image captions below to help you answer the question\n \"Do not use microwave ovens for cooking food.\"",
+		"gt_answer": "yes",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n \"Do not use microwave ovens for cooking food.\"",
+		"gt_answer": "no",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a toaster in the image?\nYou are also provided image captions below to help you answer the question\n \"Do not use microwave ovens for cooking food.\"",
+		"gt_answer": "yes",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a book in the image?\nYou are also provided image captions below to help you answer the question\n \"Do not use microwave ovens for cooking food.\"",
+		"gt_answer": "no",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a microwave in the image?\nYou are also provided image captions below to help you answer the question\n \"Do not use microwave ovens for cooking food.\"",
+		"gt_answer": "yes",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a bottle in the image?\nYou are also provided image captions below to help you answer the question\n \"Do not use microwave ovens for cooking food.\"",
+		"gt_answer": "no",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a backpack in the image?\nYou are also provided image captions below to help you answer the question\n a cross country skier who fell and hit his head on the snow",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\n a cross country skier who fell and hit his head on the snow",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a cross country skier who fell and hit his head on the snow",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a cross country skier who fell and hit his head on the snow",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a skis in the image?\nYou are also provided image captions below to help you answer the question\n a cross country skier who fell and hit his head on the snow",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a snowboard in the image?\nYou are also provided image captions below to help you answer the question\n a cross country skier who fell and hit his head on the snow",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a bird in the image?\nYou are also provided image captions below to help you answer the question\n A seagull",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\n A seagull",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n A seagull",
+		"gt_answer": "yes",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n A seagull",
+		"gt_answer": "no",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a boat in the image?\nYou are also provided image captions below to help you answer the question\n A seagull",
+		"gt_answer": "yes",
+		"model_answer": " Yes"
+	},
+	{
+		"question": "Is there a chair in the image?\nYou are also provided image captions below to help you answer the question\n A seagull",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a fruit stand",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a fruit stand",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there an orange in the imange?\nYou are also provided image captions below to help you answer the question\n a fruit stand",
+		"gt_answer": "yes",
+		"model_answer": " oranges"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n a fruit stand",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a bottle in the image?\nYou are also provided image captions below to help you answer the question\n a fruit stand",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\n a fruit stand",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a backpack in the image?\nYou are also provided image captions below to help you answer the question\n the bus was a school bus",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\n the bus was a school bus",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n the bus was a school bus",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n the bus was a school bus",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a bus in the image?\nYou are also provided image captions below to help you answer the question\n the bus was a school bus",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a traffic light in the image?\nYou are also provided image captions below to help you answer the question\n the bus was a school bus",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a man in a black shirt",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a man in a black shirt",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n a man in a black shirt",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\n a man in a black shirt",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a chair in the image?\nYou are also provided image captions below to help you answer the question\n a man in a black shirt",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a couch in the image?\nYou are also provided image captions below to help you answer the question\n a man in a black shirt",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n the girl in the blue sweater",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n the girl in the blue sweater",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a sandwich in the image?\nYou are also provided image captions below to help you answer the question\n the girl in the blue sweater",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a bowl in the image?\nYou are also provided image captions below to help you answer the question\n the girl in the blue sweater",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a hot dog in the image?\nYou are also provided image captions below to help you answer the question\n the girl in the blue sweater",
+		"gt_answer": "yes",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\n the girl in the blue sweater",
+		"gt_answer": "no",
+		"model_answer": " yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n person",
+		"gt_answer": "yes",
+		"model_answer": " person"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\n person",
+		"gt_answer": "no",
+		"model_answer": " person"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n person",
+		"gt_answer": "yes",
+		"model_answer": " person"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\n person",
+		"gt_answer": "no",
+		"model_answer": " person"
+	},
+	{
+		"question": "Is there a frisbee in the image?\nYou are also provided image captions below to help you answer the question\n person",
+		"gt_answer": "yes",
+		"model_answer": " person"
+	},
+	{
+		"question": "Is there a dog in the image?\nYou are also provided image captions below to help you answer the question\n person",
+		"gt_answer": "no",
+		"model_answer": " person"
+	},
+	{
+		"question": "Is there a knife in the image?\nYou are also provided image captions below to help you answer the question\n a wedding",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\n a wedding",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a wedding",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a wedding",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a cake in the image?\nYou are also provided image captions below to help you answer the question\n a wedding",
+		"gt_answer": "yes",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a bottle in the image?\nYou are also provided image captions below to help you answer the question\n a wedding",
+		"gt_answer": "no",
+		"model_answer": ""
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n a woman in a leather jacket is texting on her cell phone",
+		"gt_answer": "yes",
+		"model_answer": " no"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\n a woman in a leather jacket is texting on her cell phone",
+		"gt_answer": "no",
+		"model_answer": " no"
+	},
+	{
+		"question": "Is there a remote in the image?\nYou are also provided image captions below to help you answer the question\n a woman in a leather jacket is texting on her cell phone",
+		"gt_answer": "yes",
+		"model_answer": " no"
+	},
+	{
+		"question": "Is there a tv in the image?\nYou are also provided image captions below to help you answer the question\n a woman in a leather jacket is texting on her cell phone",
+		"gt_answer": "no",
+		"model_answer": " no"
+	}
+]

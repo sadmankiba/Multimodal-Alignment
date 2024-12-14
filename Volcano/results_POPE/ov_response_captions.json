@@ -1,0 +1,502 @@
+[
+	{
+		"question": "Is there a snowboard in the image?\nYou are also provided image captions below to help you answer the question\nA skier is snowboarding down the slope on a sunny day.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a backpack in the image?\nYou are also provided image captions below to help you answer the question\nAn athlete is gliding down a snow-covered slope, carving through the pristine white.",
+		"gt_answer": "no",
+		"model_answer": "No, there is no backpack in the image."
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nThis image shows a skier going down a snowy hill with parallel tracks in the snow.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA skier takes a picture of their path",
+		"gt_answer": "no",
+		"model_answer": "The answer is no"
+	},
+	{
+		"question": "Is there a skis in the image?\nYou are also provided image captions below to help you answer the question\nThe snowboarder is riding on a white snowy surface with ski tracks visible around him.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dog in the image?\nYou are also provided image captions below to help you answer the question\nA skier rides through the snow, leaving trails in the crisp, crisp air.",
+		"gt_answer": "no",
+		"model_answer": "Question: Is there a dog in the image\nYou are provided image captions below to help you answer the question\nAnswer: No"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\nA little girl smiles while standing next to her mom on the rainy day.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a truck in the image"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\na mom and daughter happily walking on a rainy day",
+		"gt_answer": "no",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA beautiful girl happily walking with a wonderful umbrella.",
+		"gt_answer": "yes",
+		"model_answer": "Answer: Yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nA mom and daughter enjoy a rainy walk under the bright, colorful umbrella.",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a dining table in the image."
+	},
+	{
+		"question": "Is there an umbrella in the imange?\nYou are also provided image captions below to help you answer the question\na woman holding an umbrella and a little girl walking on a wet ground.",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\na lady holding a red and black umbrella walking a child",
+		"gt_answer": "no",
+		"model_answer": "Question: Does the umbrella have an other color than black and red"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA city bus station with multiple red buses parked.",
+		"gt_answer": "yes",
+		"model_answer": "Answer: red"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nA white transit bus waits in front of a Metrorail station in a sunny city with tall palm trees.",
+		"gt_answer": "no",
+		"model_answer": "There is a white transit bus waiting in front of a Metrorail station in a sunny city"
+	},
+	{
+		"question": "Is there a bicycle in the image?\nYou are also provided image captions below to help you answer the question\nA line of city buses at the bus stop.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a motorcycle in the image?\nYou are also provided image captions below to help you answer the question\nIn this busy city scene, a white transit bus labeled \"LINEA EXPRESS\" with the line number 100 is driving through.",
+		"gt_answer": "no",
+		"model_answer": "No, there is not a motorcycle in the image."
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nThere are several buses in the parking lot and a train station in the background.",
+		"gt_answer": "yes",
+		"model_answer": "The image does not have a car."
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\nbus parked at the bus station,  people are walking and waiting to board the bus",
+		"gt_answer": "no",
+		"model_answer": "There is no truck in the image"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA red double decker bus with people on the top driving down the road.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nA red double-decker bus is driving down the street and is full of people waving.",
+		"gt_answer": "no",
+		"model_answer": "Question: Is there a building\n"
+	},
+	{
+		"question": "Is there a potted plant in the image?\nYou are also provided image captions below to help you answer the question\npeople waving in the air while riding a double decker bus on a bright day",
+		"gt_answer": "yes",
+		"model_answer": "Question: is there a sign\nYou are given the image\nAnswer: yes"
+	},
+	{
+		"question": "Is there a vase in the image?\nYou are also provided image captions below to help you answer the question\nThe red double decker bus is full of people waving at the camera.",
+		"gt_answer": "no",
+		"model_answer": "There is no vase in the image."
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\npeople boarding a red double-decker bus in a neighborhood",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\nRuta del arrroz - a double-decker bus going down the street with a bunch of passengers on the roof!",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a traffic light in the image?\nYou are also provided image captions below to help you answer the question\nA view from the inside of a crowded city vehicle, showing some decorations on the dashboard.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a bus in the image?\nYou are also provided image captions below to help you answer the question\nIt is hard to tell because it is covered by a yellow sign on the windshield, but the image shows a busy street with a man on a motorcycle and some people with their hoods up. ",
+		"gt_answer": "no",
+		"model_answer": "No"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA view from the driver's seat of a car.",
+		"gt_answer": "yes",
+		"model_answer": "Answer: Yes, there is a person in the image."
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nHere is a picture of a busy street in a foreign country.",
+		"gt_answer": "no",
+		"model_answer": "There is a dining table in the image"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA car filled with people with a bunch of grapes hanging off the windscreen.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\nA view from inside a moving vehicle with the car decorations hanging out the window.",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dog in the image?\nYou are also provided image captions below to help you answer the question\na cute little white pup lays next to a cup",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA cute puppy in a white sweater is laying on a coffee table, looking at a newspaper.",
+		"gt_answer": "no",
+		"model_answer": "The dog is not in the picture"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nPuppy in a messy bed reading a newspaper",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a chair in the image?\nYou are also provided image captions below to help you answer the question\nA adorable little white dog is looking at the camera with a guilty expression.",
+		"gt_answer": "no",
+		"model_answer": "Question: Is the image taken indoors\n"
+	},
+	{
+		"question": "Is there a bed in the image?\nYou are also provided image captions below to help you answer the question\nA adorable puppy resting on a table, next to a mug and newspapers.",
+		"gt_answer": "yes",
+		"model_answer": "No, there is no bed in the image."
+	},
+	{
+		"question": "Is there a book in the image?\nYou are also provided image captions below to help you answer the question\nA cute puppy with a sad look on its face while looking at a newspaper.",
+		"gt_answer": "no",
+		"model_answer": "No, the puppy is not looking at the newspaper."
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nThe man in the jacket is about to eat his chocolate donut",
+		"gt_answer": "yes",
+		"model_answer": "The man in the jacket is about to eat his chocolate donut."
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA man in a yellow and black jacket is in the middle of eating something delicious.",
+		"gt_answer": "no",
+		"model_answer": "The image shows a person eating a pastry."
+	},
+	{
+		"question": "Is there a spoon in the image?\nYou are also provided image captions below to help you answer the question\nThe man was able to savor a delightful bite out of a pastry on his lunch break.",
+		"gt_answer": "yes",
+		"model_answer": "Question: Is there any bread\nThe man\nYou are provided image captions below to help you answer the question\nThe man was able to savor a delightful bite out of a pastry on his lunch break.\nThe man was able to savor a"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\nA man in a jacket is sitting at a desk eating a pastry.",
+		"gt_answer": "no",
+		"model_answer": "No, there is no cup in the image."
+	},
+	{
+		"question": "Is there a fork in the image?\nYou are also provided image captions below to help you answer the question\nA man excitedly picks up a delicious doughnut with chocolate on it.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nA man who is eating chocolate covered donuts in an office.",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a dining table in the image."
+	},
+	{
+		"question": "Is there a tv in the image?\nYou are also provided image captions below to help you answer the question\nA note attached to the microwave door of a storage cabinet in a kitchen.",
+		"gt_answer": "yes",
+		"model_answer": "Answer: no"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\n\"Stop doing that!  Don't cover your food in the microwave.  Clean your food with your own hands instead.  It's important to clean the microwave.  Don't run the microwave with nothing in it.  After 4-",
+		"gt_answer": "no",
+		"model_answer": "No, there is no person in the image."
+	},
+	{
+		"question": "Is there a toaster in the image?\nYou are also provided image captions below to help you answer the question\nSuggestions to keep everyone's cooking experience safe on the shelves.",
+		"gt_answer": "yes",
+		"model_answer": "There is a microwave and a toaster on the shelves."
+	},
+	{
+		"question": "Is there a book in the image?\nYou are also provided image captions below to help you answer the question\nSuggestion: \"Clean-up after yourself in both toaster ovens and microwaves... never run the microwaves with nothing in them.\"",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a book on the left side of the image"
+	},
+	{
+		"question": "Is there a microwave in the image?\nYou are also provided image captions below to help you answer the question\n\"Four pieces of advice for the microwave in the kitchen.\"",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a bottle in the image?\nYou are also provided image captions below to help you answer the question\na sign on a wall with advice on food safe",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a backpack in the image?\nYou are also provided image captions below to help you answer the question\nA skier fell and crashed down.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\nThe athlete slipped and fell on the slope, causing them to tumble on the snow.",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a handbag on the ground in the image."
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA skier slides on his back down the slope.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a person in the image"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA skier loses balance and lands hard on his knees.",
+		"gt_answer": "no",
+		"model_answer": "Answer: No"
+	},
+	{
+		"question": "Is there a skis in the image?\nYou are also provided image captions below to help you answer the question\nA man in white, red and blue is laying on the snow on the course and is almost hit by an avalanche.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a man laying on the snow on the course."
+	},
+	{
+		"question": "Is there a snowboard in the image?\nYou are also provided image captions below to help you answer the question\nThe skier is laying on the snow with their legs and skis on, getting ready to get up for the next lap.",
+		"gt_answer": "no",
+		"model_answer": "There is a red and white flag with a white triangle in the foreground of the image"
+	},
+	{
+		"question": "Is there a bird in the image?\nYou are also provided image captions below to help you answer the question\na seagull sitting on a rocky shore.",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\nA seagull watches as a group of people ride on a boat.",
+		"gt_answer": "no",
+		"model_answer": "Question: Is there a handbag in the image"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\na white bird sitting on a rock by the water",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA seagull standing on a rocky shore overlooking a beautiful beach with a few boats.",
+		"gt_answer": "no",
+		"model_answer": "No, there is no car in the image."
+	},
+	{
+		"question": "Is there a boat in the image?\nYou are also provided image captions below to help you answer the question\nA seagull perched on rocky shore amidst a calm sea and boats.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a boat in the image."
+	},
+	{
+		"question": "Is there a chair in the image?\nYou are also provided image captions below to help you answer the question\nThere is a great view of the ocean with a bird on the shore.",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA fruit stand selling a variety of oranges with several orange juice bottles on display.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nThe image shows a man in a hoodie selling small oranges at a market, surrounded by eager customers. The oranges are labeled as \"100% Natural\" and cost \u00a31.00 per small bottle.",
+		"gt_answer": "no",
+		"model_answer": "There are many people at the market"
+	},
+	{
+		"question": "Is there an orange in the imange?\nYou are also provided image captions below to help you answer the question\nA man stands at an orange juice stand. ",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nThe man standing behind the display is selling oranges.",
+		"gt_answer": "no",
+		"model_answer": "There is a man selling oranges behind a display."
+	},
+	{
+		"question": "Is there a bottle in the image?\nYou are also provided image captions below to help you answer the question\nThe orange juice has 100% natural ingredients and is sold at a small shop for \u00a31.50.",
+		"gt_answer": "yes",
+		"model_answer": "There is a bottle on the left side of the display"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\nA man displays an array of oranges for sale.",
+		"gt_answer": "no",
+		"model_answer": "Question: Is the table"
+	},
+	{
+		"question": "Is there a backpack in the image?\nYou are also provided image captions below to help you answer the question\nMany men and women are working on a large bus in a field.",
+		"gt_answer": "yes",
+		"model_answer": "Answer: No"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\nA group of people are in the yard as the school bus pulls out, trying to push themselves down.",
+		"gt_answer": "no",
+		"model_answer": "Question: Is the bus parked\n"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\na group of men pulling a school bus from its parked spot",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\na group of men in uniform pull off a huge ramp with their back.",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a bus in the image?\nYou are also provided image captions below to help you answer the question\nA group of people pushing a bus down a street",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a traffic light in the image?\nYou are also provided image captions below to help you answer the question\nA group of people all bend over to push a bus into a parking lot.",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\na man with his smiling face with a plate of pizza inside the oven",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA man cooking a pizza inside of a kitchen.",
+		"gt_answer": "no",
+		"model_answer": "No, there is no car in the image."
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nA man in a black shirt is holding a homemade pizza in the oven.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\nman with black hat holds pizza in kitchen as oven door is in the opening",
+		"gt_answer": "no",
+		"model_answer": "There are no cups in the image."
+	},
+	{
+		"question": "Is there a chair in the image?\nYou are also provided image captions below to help you answer the question\nA man in a chef's uniform holding up a pizza oven door.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a couch in the image?\nYou are also provided image captions below to help you answer the question\nMan in kitchen holding pizza on tray",
+		"gt_answer": "no",
+		"model_answer": "Answer: Yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\na happy little girl eating a sandwich in a restaurant",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nlittle girl in a blue sweater enjoying some food at a cafe",
+		"gt_answer": "no",
+		"model_answer": "The answer is yes"
+	},
+	{
+		"question": "Is there a sandwich in the image?\nYou are also provided image captions below to help you answer the question\nA little girl eating at the diner",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a bowl in the image?\nYou are also provided image captions below to help you answer the question\nA happy little girl enjoys a snack at a restaurant.",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a hot dog in the image?\nYou are also provided image captions below to help you answer the question\nA kid is sitting at a table with her hands in her pockets while having a hamburger and drinking juice.",
+		"gt_answer": "yes",
+		"model_answer": "The answer is correct"
+	},
+	{
+		"question": "Is there a handbag in the image?\nYou are also provided image captions below to help you answer the question\nA little girl eats a meal at a table with two cups of Pepsi.",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\na man catching a frisbee while another is running in the background.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a person in the image"
+	},
+	{
+		"question": "Is there a dining table in the image?\nYou are also provided image captions below to help you answer the question\nMen playing Frisbee in the park",
+		"gt_answer": "no",
+		"model_answer": "Answer: The men are playing frisbee."
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nTwo men play frisbee on a sunny day, the man in a yellow shirt is running to intercept a frisbee",
+		"gt_answer": "yes",
+		"model_answer": "The man is leaping"
+	},
+	{
+		"question": "Is there a truck in the image?\nYou are also provided image captions below to help you answer the question\na guy is in the air catching a frisbee",
+		"gt_answer": "no",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a frisbee in the image?\nYou are also provided image captions below to help you answer the question\nA man jumping for a frisbee while the other man runs to catch it.",
+		"gt_answer": "yes",
+		"model_answer": "There is a frisbee in the image."
+	},
+	{
+		"question": "Is there a dog in the image?\nYou are also provided image captions below to help you answer the question\nA group of people playing frisbee on a field.",
+		"gt_answer": "no",
+		"model_answer": "No"
+	},
+	{
+		"question": "Is there a knife in the image?\nYou are also provided image captions below to help you answer the question\nA bride and groom cutting their wedding cake together at a reception.",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a cup in the image?\nYou are also provided image captions below to help you answer the question\nThe bride is cutting her wedding cake while the groom stands beside her.",
+		"gt_answer": "no",
+		"model_answer": "The answer is correct"
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\na man and woman cut their wedding cake on a white table.",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nThis is a beautiful wedding scene where the couple is cutting their wedding cake.",
+		"gt_answer": "no",
+		"model_answer": "The man and woman are standing together and cutting the cake."
+	},
+	{
+		"question": "Is there a cake in the image?\nYou are also provided image captions below to help you answer the question\nCouple cutting into wedding cake.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a wedding cake"
+	},
+	{
+		"question": "Is there a bottle in the image?\nYou are also provided image captions below to help you answer the question\nMan and woman cutting a cake",
+		"gt_answer": "no",
+		"model_answer": "Answer: The man and woman are not cutting the cake."
+	},
+	{
+		"question": "Is there a person in the image?\nYou are also provided image captions below to help you answer the question\nA woman wearing a leather jacket is standing by a building holding a phone and looking down at it.",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a woman in the image."
+	},
+	{
+		"question": "Is there a car in the image?\nYou are also provided image captions below to help you answer the question\nA woman is standing outside holding a phone as it begins to show a text message.",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a remote in the image?\nYou are also provided image captions below to help you answer the question\nWoman looking at her phone as she waits for the bus outside.",
+		"gt_answer": "yes",
+		"model_answer": "The answer is yes"
+	},
+	{
+		"question": "Is there a tv in the image?\nYou are also provided image captions below to help you answer the question\nA young lady wearing a leather jacket is standing on the street. She is looking at her phone while standing in front of a store.",
+		"gt_answer": "no",
+		"model_answer": "No, there is no tv in the image."
+	}
+]

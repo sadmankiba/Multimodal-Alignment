@@ -1,0 +1,502 @@
+[
+	{
+		"question": "Is there a snowboard in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a backpack in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: no"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a person in the image, a skier riding up the slopes on a snowy mountain."
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a skis in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dog in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no dog in the image."
+	},
+	{
+		"question": "Is there a truck in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a car parked on the side of the road."
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there an umbrella in the imange?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a handbag in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no dining table visible in the image."
+	},
+	{
+		"question": "Is there a bicycle in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a motorcycle in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no motorcycle in the image."
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a truck in the image?",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a potted plant in the image?",
+		"gt_answer": "yes",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a vase in the image?",
+		"gt_answer": "no",
+		"model_answer": "The answer is no"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a red double-decker bus in the image."
+	},
+	{
+		"question": "Is there a truck in the image?",
+		"gt_answer": "no",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a traffic light in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a traffic light visible in the image."
+	},
+	{
+		"question": "Is there a bus in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no bus in the image."
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a person visible in the image."
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: The answer is incorrect."
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a car in the image."
+	},
+	{
+		"question": "Is there a truck in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: no"
+	},
+	{
+		"question": "Is there a dog in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no person in the image. The image shows a white dog lying down with its eyes closed, as if it's sleeping or resting."
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a chair in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: No"
+	},
+	{
+		"question": "Is there a bed in the image?",
+		"gt_answer": "yes",
+		"model_answer": "The answer is yes"
+	},
+	{
+		"question": "Is there a book in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a spoon in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a spoon in the image."
+	},
+	{
+		"question": "Is there a cup in the image?",
+		"gt_answer": "no",
+		"model_answer": "Question: Is there anything on the counter\nAnswer: no"
+	},
+	{
+		"question": "Is there a fork in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a dining table visible in the image."
+	},
+	{
+		"question": "Is there a tv in the image?",
+		"gt_answer": "yes",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a toaster in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a toaster on the shelf in the image."
+	},
+	{
+		"question": "Is there a book in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a microwave in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a bottle in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a backpack in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a handbag in the image?",
+		"gt_answer": "no",
+		"model_answer": "No"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: No"
+	},
+	{
+		"question": "Is there a skis in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a snowboard in the image?",
+		"gt_answer": "no",
+		"model_answer": "Question: Are there two people on the right\nIf the answer is no, then\nAnswer: Yes"
+	},
+	{
+		"question": "Is there a bird in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a handbag in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no handbag in the image."
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a person visible in the image."
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no car in the image."
+	},
+	{
+		"question": "Is there a boat in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a boat in the image."
+	},
+	{
+		"question": "Is there a chair in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: Yes"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a person in the image."
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there an orange in the imange?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no dining table in the image."
+	},
+	{
+		"question": "Is there a bottle in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a cup in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: No, there is no cup visible in the image."
+	},
+	{
+		"question": "Is there a backpack in the image?",
+		"gt_answer": "yes",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a handbag in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no handbag visible in the image. The picture depicts a group of people engaging in what appears to be a physical activity, such as a group push or tug."
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a bus in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a traffic light in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no traffic light in the image. The bus and the people are the main objects, and the traffic light is not visible."
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "The question was answered correctly."
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a cup in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a chair in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a couch in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "No, there is no car in the image. The picture only shows a person eating a meal at a table."
+	},
+	{
+		"question": "Is there a sandwich in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a bowl in the image?",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a bowl on the table in front of the girl."
+	},
+	{
+		"question": "Is there a hot dog in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Answer: Yes, there is a hot dog on a bun."
+	},
+	{
+		"question": "Is there a handbag in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: yes"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a dining table in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "yes",
+		"model_answer": "The feedback clarifies that there is a car in the image."
+	},
+	{
+		"question": "Is there a truck in the image?",
+		"gt_answer": "no",
+		"model_answer": "Yes, there is a truck visible in the image."
+	},
+	{
+		"question": "Is there a frisbee in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a dog in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a knife in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes, there is a knife in the image."
+	},
+	{
+		"question": "Is there a cup in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "Answer: No, the man's name is not in the image."
+	},
+	{
+		"question": "Is there a cake in the image?",
+		"gt_answer": "yes",
+		"model_answer": "yes"
+	},
+	{
+		"question": "Is there a bottle in the image?",
+		"gt_answer": "no",
+		"model_answer": "Question: Does the woman in the wedding?\n"
+	},
+	{
+		"question": "Is there a person in the image?",
+		"gt_answer": "yes",
+		"model_answer": "Yes"
+	},
+	{
+		"question": "Is there a car in the image?",
+		"gt_answer": "no",
+		"model_answer": "The initial answer, 'no,' is correct. The question was about there being a car in the image. In the image, there is no car present."
+	},
+	{
+		"question": "Is there a remote in the image?",
+		"gt_answer": "yes",
+		"model_answer": "no"
+	},
+	{
+		"question": "Is there a tv in the image?",
+		"gt_answer": "no",
+		"model_answer": "no"
+	}
+]
