@@ -76,6 +76,7 @@ def _collate_fn(examples, processor):
     texts = [] 
     mask_texts = []
     for example in examples:
+        example['question'] = example['question'].replace('<image>\n', '').replace('\n<image>', '')
         texts.append(f"Question: {example['question']} Answer: {example['answer']}")
         mask_texts.append(f"Question: {example['question']} Answer:")
 

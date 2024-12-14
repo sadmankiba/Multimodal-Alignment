@@ -23,16 +23,21 @@ print(dataset)
 device = "cuda" if torch.cuda.is_available() else "cpu"
 processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 
-model = Blip2ForConditionalGeneration.from_pretrained(
-        "Salesforce/blip2-opt-2.7b", torch_dtype=torch.float16
-    )
-model = model.to(device)
+def get_blip2_model(path: str):
+    model = Blip2ForConditionalGeneration.from_pretrained(
+            path, torch_dtype=torch.float16
+        )
+    model = model.to(device)
+    return model
 
 responses = []
 for i, entry in enumerate(tqdm(dataset['test'])): 
     prompt = f"Question: {entry['question']} Answer:"
     image = entry['image']
     inputs = processor(images=image, text=prompt, return_tensors="pt").to(device, torch.float16)
+    # model, name = get_blip2_model("Salesforce/blip2-opt-2.7b"), "blip2-base"
+    model, name = get_blip2_model("blip2-sft"), "blip2-sft"
+    
     output = model.generate(**inputs, max_new_tokens=20)
     
     decoded_output = processor.batch_decode(output, skip_special_tokens=True)[0].strip()
@@ -54,6 +59,9 @@ for i, entry in enumerate(tqdm(dataset['test'])):
     })
     
     # Save every 1000 responses
-    if (i + 1) % 1000 == 0:
+    if (i + 1) % 10 == 0:
         print("Saving responses...")
-        pd.DataFrame(responses).to_csv(f"../data/pope_blip2_responses_{i+1}.csv", index=False)
+        pd.DataFrame(responses).to_csv(f"../data/pope_{name}_responses_{i+1}.csv", index=False)
+        
+    if i == 10:
+        break
